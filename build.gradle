@@ -1,0 +1,20 @@
+plugins{
+  id 'application'
+  id 'org.openjfx.javafxplugin'  version '0.0.9'
+}
+
+
+mainClassName = 'MyPkg.CH_14.AExecuter.Main'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation     'junit:junit:4.13'
+}
+
+javafx {
+    version = "14"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
