@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  *
  * @author laura
  */
-public class _15_SimpleCalculator extends Application {
+public class _15_Exercise15_04_SimpleCalculator extends Application {
   @Override
   // Override the start method in the Application class
   public void start(Stage primaryStage) {
@@ -59,7 +59,7 @@ public class _15_SimpleCalculator extends Application {
     primaryStage.setScene(scene); // Place the scene in the stage
     primaryStage.show(); // Display the stage
     
-    //Use lambda expressions for implementing the handlers
+    //Use Lambda expressions for implementing the handlers
     //Double resultAddition = Double.parseDouble(tfNumber1.getText()) + Double.parseDouble(tfNumber2.getText());
   }
   
