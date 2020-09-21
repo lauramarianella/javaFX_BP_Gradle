@@ -52,8 +52,7 @@ public class _15_05_LambdaHandlerDemo extends Application {
     });
     
     btRight.setOnAction(e ->
-      text.setX(text.getX() < pane.getWidth() - 100?
-        text.getX() + 5 : pane.getWidth() - 100)
+            text.setX(text.getX() < pane.getWidth() - 100? text.getX() + 5 : pane.getWidth() - 100)
     );
 
     // Create a scene and place it in the stage
