@@ -39,13 +39,16 @@ public class _15_12_PathTransitionDemo extends Application {
     
     // Create a path transition 
     PathTransition pt = new PathTransition();
-    pt.setDuration(Duration.millis(4000));
+    pt.setDuration(Duration.millis(2000));
+    //pt.setDuration(Duration.millis(10000));
     pt.setPath(circle);
     pt.setNode(rectangle);
     pt.setOrientation(
-      PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
+      PathTransition.OrientationType.NONE);
     pt.setCycleCount(Timeline.INDEFINITE);
+    
     pt.setAutoReverse(true);
+    //pt.setRate(2);
     pt.play(); // Start animation 
     
     circle.setOnMousePressed(e -> pt.pause());
