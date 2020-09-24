@@ -59,7 +59,7 @@ public class _15_Exercise15_RectangleShrinkTimelineFadeTrans extends Application
     
      // Apply a fade transition to ellipse
     FadeTransition ft = 
-      new FadeTransition(Duration.millis(1000), r);
+      new FadeTransition(Duration.millis(10000), r);
     
     // Create a scene and place it in the stage
     Scene scene = new Scene(pane, 300, 250);
