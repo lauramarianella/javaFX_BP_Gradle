@@ -1,20 +1,25 @@
 plugins{
+  id 'java'
   id 'application'
   id 'org.openjfx.javafxplugin'  version '0.0.9'
 }
 
 
+//mainClassName = 'MyPkg.CH_14.AExecuter.Main'
 mainClassName = 'MyPkg.CH_14.AExecuter.Main'
 
 repositories {
-    jcenter()
+    //google()
+    //jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    testImplementation     'junit:junit:4.13'
+    //testImplementation     'junit:junit:4.13'
+    compile group: 'org.openjfx', name: 'javafx-media', version: '14'
 }
 
 javafx {
     version = "14"
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
+    modules = [  'javafx.controls', 'javafx.fxml', 'javafx.media' ]
 }

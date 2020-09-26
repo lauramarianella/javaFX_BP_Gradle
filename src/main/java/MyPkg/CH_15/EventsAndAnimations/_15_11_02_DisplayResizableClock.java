@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MyPkg.CH_15.Events;
+package MyPkg.CH_15.EventsAndAnimations;
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javafx.application.Application;

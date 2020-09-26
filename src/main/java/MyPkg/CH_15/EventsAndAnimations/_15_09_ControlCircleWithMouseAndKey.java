@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MyPkg.CH_15.Events;
-
+package MyPkg.CH_15.EventsAndAnimations;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -21,7 +20,7 @@ import javafx.stage.Stage;
  *
  * @author laura
  */
-public class _15_03_ControlCircle extends Application {
+public class _15_09_ControlCircleWithMouseAndKey extends Application {
   private CirclePane circlePane = new CirclePane();
 
   @Override // Override the start method in the Application class
@@ -36,9 +35,8 @@ public class _15_03_ControlCircle extends Application {
     hBox.getChildren().add(btShrink);
     
     // Create and register the handler
-    btEnlarge.setOnAction(new EnlargeHandler());
-
-    btShrink.setOnAction(new ShrinkHandler());
+    btEnlarge.setOnAction(e -> circlePane.enlarge());
+    btShrink.setOnAction(e -> circlePane.shrink());
     
     BorderPane borderPane = new BorderPane();
     borderPane.setCenter(circlePane);
@@ -50,20 +48,24 @@ public class _15_03_ControlCircle extends Application {
     primaryStage.setTitle("ControlCircle"); // Set the stage title
     primaryStage.setScene(scene); // Place the scene in the stage
     primaryStage.show(); // Display the stage
-  }
-  
-  class EnlargeHandler implements EventHandler<ActionEvent> {
-    @Override // Override the handle method
-    public void handle(ActionEvent e) {
-      circlePane.enlarge();
-    }
-  }
-  
-  class ShrinkHandler implements EventHandler<ActionEvent> {
-    @Override // Override the handle method
-    public void handle(ActionEvent e) {
-      circlePane.shrink();
-    }
+    
+    circlePane.setOnMouseClicked(e -> {
+      if (e.getButton() == MouseButton.PRIMARY) {
+        circlePane.enlarge();
+      }
+      else if (e.getButton() == MouseButton.SECONDARY) {
+        circlePane.shrink();
+      }
+    });
+    
+    scene.setOnKeyPressed(e -> {
+      if (e.getCode() == KeyCode.UP) {
+        circlePane.enlarge();
+      }
+      else if (e.getCode() == KeyCode.DOWN) {
+        circlePane.shrink();
+      }
+    });
   }
   
   /**
@@ -73,23 +75,24 @@ public class _15_03_ControlCircle extends Application {
   public static void main(String[] args) {
     launch(args);
   }
+  
+  class CirclePane extends StackPane {
+    private Circle circle = new Circle(50); 
+
+    public CirclePane() {
+      getChildren().add(circle);
+      circle.setStroke(Color.BLACK);
+      circle.setFill(Color.WHITE);
+    }
+
+    public void enlarge() {
+      circle.setRadius(circle.getRadius() + 2);
+    }
+
+    public void shrink() {
+      circle.setRadius(circle.getRadius() > 2 ? 
+        circle.getRadius() - 2 : circle.getRadius());
+    }
+  }
 }
 
-class CirclePane extends StackPane {
-  private Circle circle = new Circle(50); 
-  
-  public CirclePane() {
-    getChildren().add(circle);
-    circle.setStroke(Color.BLACK);
-    circle.setFill(Color.WHITE);
-  }
-  
-  public void enlarge() {
-    circle.setRadius(circle.getRadius() + 2);
-  }
-  
-  public void shrink() {
-    circle.setRadius(circle.getRadius() > 2 ? 
-      circle.getRadius() - 2 : circle.getRadius());
-  }
-}

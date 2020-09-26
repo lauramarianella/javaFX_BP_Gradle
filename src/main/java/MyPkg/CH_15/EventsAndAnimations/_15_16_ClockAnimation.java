@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MyPkg.CH_15.Events;
+package MyPkg.CH_15.EventsAndAnimations;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javafx.application.Application;
@@ -53,9 +53,8 @@ public class _15_16_ClockAnimation extends Application {
   public static void main(String[] args) {
     launch(args);
   }
-}
-
-class ClockPane extends Pane {
+  
+  class ClockPane extends Pane {
   private int hour;
   private int minute;
   private int second;
@@ -178,3 +177,5 @@ class ClockPane extends Pane {
     paintClock();
   }
 }
+}
+

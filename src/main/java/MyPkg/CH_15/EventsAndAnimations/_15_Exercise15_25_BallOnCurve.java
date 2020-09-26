@@ -1,4 +1,4 @@
-package MyPkg.CH_15.Events;
+package MyPkg.CH_15.EventsAndAnimations;
 
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;

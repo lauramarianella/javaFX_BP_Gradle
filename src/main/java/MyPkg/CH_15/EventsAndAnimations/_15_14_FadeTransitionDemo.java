@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MyPkg.CH_15.Events;
+package MyPkg.CH_15.EventsAndAnimations;
 import javafx.animation.FadeTransition;
 import javafx.animation.Timeline;
 import javafx.application.Application;

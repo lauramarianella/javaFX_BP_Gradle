@@ -1,51 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package MyPkg.CH_15.Events;
+
+package MyPkg.CH_16.UIControlsAndMultimedia;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.beans.property.DoubleProperty;
+import javafx.geometry.Orientation;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
+import javafx.scene.control.Slider;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
-/**
- *
- * @author laura
- */
-public class _15_18_BounceBallControl extends Application {
+
+public class _16_12_BounceBallSlider extends Application {
   @Override // Override the start method in the Application class
   public void start(Stage primaryStage) {
-    BallPane ballPane = new BallPane(); // Create a ball pane
-
-    // Pause and resume animation
-    ballPane.setOnMousePressed(e -> ballPane.pause());
-    ballPane.setOnMouseReleased(e -> ballPane.play());
-
-    // Increase and decrease animation   
-    ballPane.setOnKeyPressed(e -> {
-      if (e.getCode() == KeyCode.UP) {
-        ballPane.increaseSpeed();
-      } 
-      else if (e.getCode() == KeyCode.DOWN) {
-        ballPane.decreaseSpeed();
-      }
-    });
-
+    BallPane ballPane = new BallPane();
+    Slider slSpeed = new Slider();
+    slSpeed.setMax(20);
+    ballPane.rateProperty().bind(slSpeed.valueProperty());
+    
+    BorderPane pane = new BorderPane();
+    pane.setCenter(ballPane);
+    pane.setBottom(slSpeed);
+        
     // Create a scene and place it in the stage
-    Scene scene = new Scene(ballPane, 250, 150);
-    primaryStage.setTitle("BounceBallControl"); // Set the stage title
+    Scene scene = new Scene(pane, 250, 250);
+    primaryStage.setTitle("BounceBallSlider"); // Set the stage title
     primaryStage.setScene(scene); // Place the scene in the stage
     primaryStage.show(); // Display the stage
-    
-    // Must request focus after the primary stage is displayed
-    ballPane.requestFocus();
   }
 
   /**
@@ -56,7 +42,47 @@ public class _15_18_BounceBallControl extends Application {
     launch(args);
   }
 }
-//_15_17_BallPane
+class BounceBallSlider extends Application {
+  @Override // Override the start method in the Application class
+  public void start(Stage primaryStage) {
+    Text text = new Text(20, 20, "JavaFX Programming");
+    
+    Slider slHorizontal = new Slider();
+    slHorizontal.setShowTickLabels(true);
+    slHorizontal.setShowTickMarks(true);    
+    
+    Slider slVertical = new Slider();
+    slVertical.setOrientation(Orientation.VERTICAL);
+    slVertical.setShowTickLabels(true);
+    slVertical.setShowTickMarks(true);
+    slVertical.setValue(100);
+    
+    // Create a text in a pane
+    Pane paneForText = new Pane();
+    paneForText.getChildren().add(text);
+    
+    // Create a border pane to hold text and scroll bars
+    BorderPane pane = new BorderPane();
+    pane.setCenter(paneForText);
+    pane.setBottom(slHorizontal);
+    pane.setRight(slVertical);
+
+    slHorizontal.valueProperty().addListener(ov -> 
+      text.setX(slHorizontal.getValue() * paneForText.getWidth() /
+        slHorizontal.getMax()));
+    
+    slVertical.valueProperty().addListener(ov -> 
+      text.setY((slVertical.getMax() - slVertical.getValue()) 
+        * paneForText.getHeight() / slVertical.getMax()));
+    
+    // Create a scene and place it in the stage
+    Scene scene = new Scene(pane, 450, 170);
+    primaryStage.setTitle("SliderDemo"); // Set the stage title
+    primaryStage.setScene(scene); // Place the scene in the stage
+    primaryStage.show(); // Display the stage   
+  }
+
+}
 class BallPane extends Pane {
   public final double radius = 20;
   private double x = radius, y = radius;
