@@ -4,10 +4,6 @@ plugins{
   id 'org.openjfx.javafxplugin'  version '0.0.9'
 }
 
-
-//mainClassName = 'MyPkg.CH_14.AExecuter.Main'
-mainClassName = 'MyPkg.CH_14.AExecuter.Main'
-
 repositories {
     //google()
     //jcenter()
@@ -23,3 +19,18 @@ javafx {
     version = "14"
     modules = [  'javafx.controls', 'javafx.fxml', 'javafx.media' ]
 }
+
+mainClassName = 'MyPkg.CH_14.AExecuter.Main'
+mainClassName = 'MyPkg.CH_15.EventsAndAnimations._15_Q5_ScalingFigure'
+//mainClassName = 'MyPkg.CH_16.UIControlsAndMultimedia._16_01_LabelWithGraphic'
+//mainClassName = 'MyPkg.CH_16.UIControlsAndMultimedia._16_02_ButtonDemo'
+//mainClassName = 'MyPkg.CH_16.UIControlsAndMultimedia._16_03_CheckBoxDemo'
+//mainClassName = 'MyPkg.CH_16.UIControlsAndMultimedia._16_04_RadioButtonDemo'
+//mainClassName = 'MyPkg.CH_16.UIControlsAndMultimedia._16_05_TextFieldDemo'
+//mainClassName = 'MyPkg.CH_16.UIControlsAndMultimedia._16_07_TextAreaDemo'
+//mainClassName = 'MyPkg.CH_16.UIControlsAndMultimedia._16_08_ComboBoxDemo'
+//mainClassName = 'MyPkg.CH_16.UIControlsAndMultimedia._16_09_ListViewDemo'
+//mainClassName = 'MyPkg.CH_16.UIControlsAndMultimedia._16_10_ScrollBarDemo'
+//mainClassName = 'MyPkg.CH_16.UIControlsAndMultimedia._16_11_SliderDemo'
+//mainClassName = 'MyPkg.CH_16.UIControlsAndMultimedia._16_14_MediaDemo'
+

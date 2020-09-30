@@ -44,7 +44,7 @@ public class _16_05_TextFieldDemo extends RadioButtonDemo {
     paneForTextField.setLeft(new Label("Enter a new message: "));
     
     TextField tf = new TextField();
-    tf.setAlignment(Pos.BOTTOM_RIGHT);
+    tf.setAlignment(Pos.BASELINE_RIGHT);
     paneForTextField.setCenter(tf);
     pane.setTop(paneForTextField);
     

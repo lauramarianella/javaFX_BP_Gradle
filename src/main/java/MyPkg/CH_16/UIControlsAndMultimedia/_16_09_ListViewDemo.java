@@ -22,7 +22,7 @@ public class _16_09_ListViewDemo extends Application {
   // Declare an array of Strings for flag titles
   private String[] flagTitles = {"Canada", "France", "United Kingdom"};
 
-  // Declare an ImageView array for the national flags of 9 countries
+  // Declare an ImageView array for the national flags of 3 countries
   private ImageView[] ImageViews = {
      new ImageView("https://upload.wikimedia.org/wikipedia/commons/3/39/Animated-Flag-Canada.gif")
     ,new ImageView("https://upload.wikimedia.org/wikipedia/commons/1/1d/Flag_of_France_%28WFB_2004%29.gif")

@@ -22,12 +22,13 @@ public class _16_11_SliderDemo extends Application {
     Slider slHorizontal = new Slider();
     slHorizontal.setShowTickLabels(true);
     slHorizontal.setShowTickMarks(true);    
+    slHorizontal.setValue(75);
     
     Slider slVertical = new Slider();
     slVertical.setOrientation(Orientation.VERTICAL);
     slVertical.setShowTickLabels(true);
     slVertical.setShowTickMarks(true);
-    slVertical.setValue(100);
+    slVertical.setValue(90);
     
     // Create a text in a pane
     Pane paneForText = new Pane();

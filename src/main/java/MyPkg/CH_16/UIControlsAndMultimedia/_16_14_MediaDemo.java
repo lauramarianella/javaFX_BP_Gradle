@@ -21,8 +21,7 @@ import javafx.scene.media.MediaView;
 import javafx.util.Duration;
 
 public class _16_14_MediaDemo extends Application {
-  private static final String MEDIA_URL = 
-    "https://liveexample-ppe.pearsoncmg.com/common/sample.mp4";
+  private static final String MEDIA_URL = "https://liveexample-ppe.pearsoncmg.com/common/sample.mp4";
 
   @Override // Override the start method in the Application class
   public void start(Stage primaryStage) {
@@ -49,13 +48,11 @@ public class _16_14_MediaDemo extends Application {
     slVolume.setMaxWidth(Region.USE_PREF_SIZE);
     slVolume.setMinWidth(30);
     slVolume.setValue(50);
-    mediaPlayer.volumeProperty().bind(
-      slVolume.valueProperty().divide(100));
+    mediaPlayer.volumeProperty().bind(slVolume.valueProperty().divide(100));
 
     HBox hBox = new HBox(10);
     hBox.setAlignment(Pos.CENTER);
-    hBox.getChildren().addAll(playButton, rewindButton,
-      new Label("Volume"), slVolume);
+    hBox.getChildren().addAll(playButton, rewindButton, new Label("Volume"), slVolume);
 
     BorderPane pane = new BorderPane();
     pane.setCenter(mediaView);
