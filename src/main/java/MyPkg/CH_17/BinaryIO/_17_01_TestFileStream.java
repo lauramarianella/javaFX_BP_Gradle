@@ -28,9 +28,7 @@ public class _17_01_TestFileStream {
         output.write(ascii_string);// platform's default charset=[120,121,122]
         
         byte[] ascii_1 = "1".getBytes();
-        output.write(ascii_1);// platform's default charset=[49]
-        
-        
+        output.write(ascii_1);// platform's default charset=[49]   
     }
 
     try (

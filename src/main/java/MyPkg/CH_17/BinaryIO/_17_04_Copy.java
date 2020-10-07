@@ -22,10 +22,10 @@ public class _17_04_Copy {
 
     // Check if source file exists
     String path = "C:\\Users\\laura\\NetBeansProjects\\CH17InputIO\\";
-//    String nameOri = "Outline_ORI.pdf";
-//    String nameCopy = "Outline_FIN.pdf";
-    String nameOri = "MyTxt.txt";
-    String nameCopy = "MyTxtFinal.txt";
+    String nameOri = "Outline_ORI.pdf";
+    String nameCopy = "Outline_FIN.pdf";
+//    String nameOri = "MyTxt.txt";
+//    String nameCopy = "MyTxtFinal.txt";
     
     File sourceFile = new File(path + nameOri);//new File(args[0]);
     if (!sourceFile.exists()) {

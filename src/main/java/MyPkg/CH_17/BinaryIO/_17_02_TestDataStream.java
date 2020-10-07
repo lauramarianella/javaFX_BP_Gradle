@@ -25,8 +25,7 @@ public class _17_02_TestDataStream {
                 output.writeChar('c');
                 output.writeDouble(105.25);
                 output.writeDouble(105.25);
-                output.writeChars("12ABC56");
-                
+                output.writeChars("12ABC56");              
             }
 
           try ( // Create an input stream for file temp.dat
