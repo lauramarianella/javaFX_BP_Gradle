@@ -11,8 +11,7 @@ public class _17_06_TestObjectInputStream {
   public static void main(String[] args)
     throws ClassNotFoundException, IOException {
     try ( // Create an input stream for file object.dat
-      ObjectInputStream input =
-        new ObjectInputStream(new FileInputStream(path + "object.dat"));
+      ObjectInputStream input = new ObjectInputStream(new FileInputStream(path + "object.dat"));
     ) {
       // Read a string, double value, and object from the file
       String name = input.readUTF();
