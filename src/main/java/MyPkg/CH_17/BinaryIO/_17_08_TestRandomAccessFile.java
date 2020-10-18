@@ -10,7 +10,7 @@ public class _17_08_TestRandomAccessFile {
     static String path = "C:\\Users\\laura\\NetBeansProjects\\CH17InputIO\\";
     public static void main(String[] args) throws IOException {
         try ( // Create a random access file
-          RandomAccessFile inout = new RandomAccessFile(path + "_17_08_inout.dat","r");
+          RandomAccessFile inout = new RandomAccessFile(path + "_17_08_inout.dat","rw");
         ) {
             // Clear the file to destroy the old contents if exists
             inout.setLength(0);
@@ -19,7 +19,7 @@ public class _17_08_TestRandomAccessFile {
             System.out.println("Offset at the beginnig: " + inout.getFilePointer());
             // Write new integers to the file
             for (int i = 0; i < 200; i++)
-              inout.writeInt(i);//inout.writeChar((String.valueOf(i).toCharArray())[0]);inout.writeUTF(String.valueOf(i));
+              inout.writeInt(i);//inout.writeChar((String.valueOf(i).toCharArray())[0]);//inout.writeInt(i);//inout.writeUTF(String.valueOf(i));
             System.out.println("Offset after inserting 200int: " + inout.getFilePointer());
             // Display the current length of the file
             System.out.println("Current file length is " + inout.length());
@@ -30,7 +30,7 @@ public class _17_08_TestRandomAccessFile {
             System.out.println("Offset at the first number: " + inout.getFilePointer());
             
             // Retrieve the second number
-            inout.seek(1 * 4); // Move the file pointer to the second number
+            //inout.seek(1 * 4); // Move the file pointer to the second number
             System.out.println("The second number is " + inout.readInt());
 
             // Retrieve the tenth number
