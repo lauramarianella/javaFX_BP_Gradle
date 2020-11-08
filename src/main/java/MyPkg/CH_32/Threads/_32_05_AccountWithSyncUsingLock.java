@@ -33,7 +33,7 @@ public class _32_05_AccountWithSyncUsingLock {
 
     // An inner class for account
     public static class Account {
-        private static Lock lock = new ReentrantLock(); // Create a lock
+        private Lock lock = new ReentrantLock(); // Create a lock
         private int balance = 0;
 
         public int getBalance() {
