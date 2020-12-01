@@ -14,9 +14,11 @@ public class _17_08_TestRandomAccessFile {
         ) {
             // Clear the file to destroy the old contents if exists
             inout.setLength(0);
+            //System.out.println("Read something is not written yet... " + inout.readInt());//to test this, delete the file
             inout.seek(inout.length()); // Move the file pointer to the end
             
             System.out.println("Offset at the beginnig: " + inout.getFilePointer());
+            
             // Write new integers to the file
             for (int i = 0; i < 200; i++)
               inout.writeInt(i);//inout.writeChar((String.valueOf(i).toCharArray())[0]);//inout.writeInt(i);//inout.writeUTF(String.valueOf(i));

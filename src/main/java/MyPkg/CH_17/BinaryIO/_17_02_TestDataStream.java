@@ -11,7 +11,7 @@ public class _17_02_TestDataStream {
   public static void main(String[] args){
     try{
         try( // Create an output stream for file temp.dat
-            DataOutputStream output = new DataOutputStream(new FileOutputStream(path + "temp02.dat"));
+            DataOutputStream output = new DataOutputStream(new FileOutputStream(path + "exam.dat"));
            ) {
                 // Write student test scores to the file
                 output.writeUTF("John");
@@ -20,12 +20,7 @@ public class _17_02_TestDataStream {
                 output.writeDouble(185.5);
                 output.writeUTF("George");
                 output.writeDouble(105.25);
-
-                //write something -->read other type
-                output.writeChar('c');
-                output.writeDouble(105.25);
-                output.writeDouble(105.25);
-                output.writeChars("12ABC56");              
+           
             }
 
           try ( // Create an input stream for file temp.dat

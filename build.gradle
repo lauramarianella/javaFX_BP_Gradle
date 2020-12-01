@@ -36,4 +36,8 @@ javafx {
 
 //mainClassName = 'MyPkg.CH_31.JavaFXAdvance._31_09_MenuDemo';
 //mainClassName = 'MyPkg.CH_31.JavaFXAdvance._31_10_ContextMenuDemo';
-mainClassName = 'MyPkg.CH_31.JavaFXAdvance.TableViewGUI';
+//mainClassName = 'MyPkg.CH_31.JavaFXAdvance.TableViewGUI';
+
+
+mainClassName = 'MyPkg.CH_32.Threads._32_02_FlashText';
+//mainClassName = 'MyPkg.CH_32.Threads._32_02_FlashText_LambdaExp';

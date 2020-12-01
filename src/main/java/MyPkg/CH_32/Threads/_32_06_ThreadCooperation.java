@@ -49,8 +49,8 @@ public class _32_06_ThreadCooperation {
 
     //An inner class for account
     private static class Account {
-        private static Lock lock = new ReentrantLock();//Create a new lock
-        private static Condition newDeposit = lock.newCondition();//Create a condition
+        private /*static */Lock lock = new ReentrantLock();//Create a new lock
+        private /*static */Condition newDeposit = lock.newCondition();//Create a condition
         private int balance = 0;
 
         public int getBalance() {
