@@ -33,7 +33,6 @@ public class ServerV2 {//without Scan class working
 
                     System.out.println("ListenTask: \t\t\tThe command entered is " + strCommand);
                     Thread.sleep(5000);
-                    String strArray[]=null;
                     switch(strCommand) {
                         case "exit":
                             flag = false;
